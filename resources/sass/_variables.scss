@@ -1,0 +1,29 @@
+/* General */
+$fontSize:10px;
+$borderRadius:12px;
+$transitionDuration:.2s;
+$maskBg:rgba(0, 0, 0, 0.4);
+
+:root {
+    --fontWeight-nunito-light: 300;
+    --fontWeight-nunito-regular: 400;
+    --fontWeight-nunito-bold: 700;
+    --fontFamily-nunito: 'Nunito', sans-serif;
+  }
+
+  body {
+    font-family: var(--fontFamily-nunito);
+    font-weight: var(--fontWeight-nunito-regular);
+    font-size: var(--fontSize);
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+  }
+  
+
+
+
+
+  
