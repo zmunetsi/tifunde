@@ -1,11 +1,14 @@
 <?php
 
 use Illuminate\Support\Str;
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-$host = $url["host"] ?? null;
-$username = $url["user"] ?? null;
-$password = $url["pass"] ?? null;
-$database = substr($url["path"], 1);
+
+$url = getenv('JAWSDB_URL');
+$dbparts = parse_url($url);
+$hostname = $dbparts['host'];
+$username = $dbparts['user'];
+$password = $dbparts['pass'];
+$database = ltrim($dbparts['path'],'/');
+
 
 return [
 
@@ -50,7 +53,7 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'url' => env('DATABASE_URL'),
+            'url' => $url,
             // 'host' => env('DB_HOST', '127.0.0.1'),
             // 'port' => env('DB_PORT', '3306'),
             // 'database' => env('DB_DATABASE', 'forge'),
