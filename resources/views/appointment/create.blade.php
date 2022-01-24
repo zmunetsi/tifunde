@@ -47,7 +47,7 @@
             <div class="grid">
                 <div class="col-12 md:col-6">
                     <button class="p-button p-component p-button-secondary">
-                        <span class="p-button-label p-c">{{_('Sign up') }}</span>
+                        <span class="p-button-label p-c">{{ __('Sign up') }}</span>
                         <span class="p-ink" style="height: 85px; width: 85px; top: -19.1px; left: 15.5px;">
                         </span>
                     </button>

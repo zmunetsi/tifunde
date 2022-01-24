@@ -5,7 +5,7 @@
     <div class="grid pt-8 justify-content-center align-items-center w-full">
         <div class="col-12 md:col-6">
         <div class="card p-fluid">
-        <h5>Sign Up</h5>
+        <h5>{{ __('Sign up') }}</h5>
         <form method="POST" action="{{ route('register') }}">
             @csrf
             {{ Form::hidden('role', 'mentor') }}
@@ -48,7 +48,7 @@
             <div class="grid">
                 <div class="col-12 md:col-6">
                     <button class="p-button p-component p-button-secondary">
-                        <span class="p-button-label p-c">{{_('Sign up') }}</span>
+                        <span class="p-button-label p-c">{{ __('Sign up') }}</span>
                         <span class="p-ink" style="height: 85px; width: 85px; top: -19.1px; left: 15.5px;">
                         </span>
                     </button>
