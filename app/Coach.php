@@ -9,7 +9,7 @@ use App\Appointment;
 class Coach extends User
 {
 
-    protected $table = 'users';
+    //protected $table = 'users';
 
     public function appointments()
     {

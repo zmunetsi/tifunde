@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Coach;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
@@ -22,7 +22,8 @@ class CoachController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')
+            ->only(['edit', 'update', 'destroy']);
     }
 
     
@@ -75,14 +76,15 @@ class CoachController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
 
-        $coach = new Coach([
+        $user = new User([
             'name' => $request->get('name'),
             'email' => $request->get('email'),
             'password' => Hash::make($request->get('password')),
         ]);
 
-        $coach->setRole('coach');
-        $coach->save();
+        $user->setRole('coach');
+        $user->save();
+        return view('coach.dashboard', ['message' => 'User created successfully', 'user' => $user]);
     }
 
     /**
@@ -91,7 +93,7 @@ class CoachController extends Controller
      * @param  \App\Coach  $coach
      * @return \Illuminate\Http\Response
      */
-    public function show(Coach $coach)
+    public function show(User $coach)
     {
         return view('coach.show', compact('coach'));
     }

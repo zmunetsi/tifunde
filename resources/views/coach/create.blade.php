@@ -6,8 +6,9 @@
         <div class="col-12 md:col-6">
         <div class="card p-fluid">
         <h5>{{ __('Sign up') }}</h5>
-        <form method="POST" action="{{ route('coach.store') }}">
+        <form method="POST" action="{{ route('register') }}">
             @csrf
+            {{ Form::hidden('role', 'mentor') }}
             <div class="field">
                 <label for="name">{{ __('Name') }}</label>
                 <input id="name" type="text" class="p-inputtext p-component @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
