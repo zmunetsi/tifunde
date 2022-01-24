@@ -5,7 +5,7 @@
     <div class="grid pt-8 justify-content-center align-items-center w-full">
         <div class="col-12 md:col-6">
         <div class="card p-fluid">
-        <h5>{{ __('Sign up') }}</h5>
+        <h5>Sign Up</h5>
         <form method="POST" action="{{ route('register') }}">
             @csrf
             {{ Form::hidden('role', 'mentor') }}
